@@ -58,7 +58,7 @@ class FirstReactorProjectApplicationTests {
 	@Test
 	void publishTest() {
 		Flux<String> names = Flux.just("hello", "there")
-				.publishOn(Schedulers.boundedElastic())
+				.publishOn(Schedulers.single())
 				.log();
 
 		StepVerifier.create(names)
